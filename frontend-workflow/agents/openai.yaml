@@ -1,0 +1,8 @@
+interface:
+  display_name: "Frontend Workflow"
+  short_description: "Design and build complete frontend workflows"
+  brand_color: "#0D4029"
+  default_prompt: "Use $frontend-workflow to build this frontend feature with the established design, state, accessibility, verification, and handoff method."
+
+policy:
+  allow_implicit_invocation: true
