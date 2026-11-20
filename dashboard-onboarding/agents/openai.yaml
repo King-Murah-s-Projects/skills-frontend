@@ -1,0 +1,8 @@
+interface:
+  display_name: "Dashboard and Onboarding"
+  short_description: "Design dashboards, home screens, and first-run flows"
+  brand_color: "#0D4029"
+  default_prompt: "Use $dashboard-onboarding to design or review this dashboard or onboarding flow."
+
+policy:
+  allow_implicit_invocation: true
