@@ -1,14 +1,16 @@
 # skills-frontend
 
-Reusable Codex skill for frontend work.
+Reusable frontend skills for Codex and Claude Code.
 
 ## Skill
 
 This repository contains:
 
-- `frontend-workflow/` - a Codex skill for building, reviewing, and extending frontend applications with a product-aware workflow.
+- `frontend-workflow/` - a skill for building, reviewing, and extending frontend applications with a product-aware workflow.
 
-The skill captures a frontend method for:
+- `dashboard-onboarding/` - a skill for designing and reviewing dashboards, home screens, empty states, and onboarding flows. Based on Mobbin's dashboard study and the "Onboarding That Clicks" talk. Limits of those sources are in `dashboard-onboarding/references/sources.md`.
+
+`frontend-workflow` captures a frontend method for:
 
 - understanding the product and local codebase before editing;
 - matching the interface to the domain;
@@ -20,18 +22,23 @@ The skill captures a frontend method for:
 
 ## Install Globally
 
-Copy the skill folder into your global Codex skills directory:
+Codex:
 
 ```bash
 mkdir -p ~/.codex/skills
-cp -R frontend-workflow ~/.codex/skills/frontend-workflow
+cp -R frontend-workflow dashboard-onboarding ~/.codex/skills/
 ```
 
-Start a new Codex chat or refresh the skill catalog. Then use:
+Claude Code:
 
-```text
-$frontend-workflow
+```bash
+mkdir -p ~/.claude/skills
+cp -R frontend-workflow dashboard-onboarding ~/.claude/skills/
 ```
+
+Both read the same `SKILL.md`. The `agents/openai.yaml` file is only used by Codex and is ignored by Claude Code.
+
+Start a new chat or refresh the skill catalog. In Codex use `$frontend-workflow` or `$dashboard-onboarding`. In Claude Code use `/frontend-workflow` or `/dashboard-onboarding`, or ask naturally.
 
 or ask naturally for substantive frontend work. The skill allows implicit invocation.
 
@@ -41,14 +48,18 @@ Copy the skill folder into a project's local skills directory:
 
 ```bash
 mkdir -p .agents/skills
-cp -R frontend-workflow .agents/skills/frontend-workflow
+cp -R frontend-workflow dashboard-onboarding .agents/skills/
 ```
 
 This keeps the skill available to that project without changing the global Codex setup.
 
 ## Use
 
-Example prompt:
+Example prompts:
+
+```text
+Use $dashboard-onboarding to review this home screen and fix the empty first-run state.
+```
 
 ```text
 Use $frontend-workflow to build the new settings page. Follow the existing design system and verify it at desktop and mobile widths.
